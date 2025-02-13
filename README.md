@@ -1,3 +1,4 @@
+123
 ## 1. 集中式版本控制 (Centralized Version Control, CVCS) vs. 分散式版本控制 (Distributed Version Control, DVCS)
 
 ### 1.1. 集中式版本控制 (Centralized Version Control, CVCS)
