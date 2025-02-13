@@ -165,8 +165,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3fa6783af230dcf5",
+  "active": "91d2374114e34d8f",
   "lastOpenFiles": [
+    "test.txt",
+    "README.md",
+    "未命名.md",
     "drowio_github.drawio",
     "c++/leetcode題目/數學.md",
     "c++/leetcode題目/數組.md",
@@ -190,7 +193,6 @@
     "STM32/MCU1/hello/Debug/Src/syscalls.o",
     "STM32/MCU1/hello/Debug/Src/sysmem.o",
     "STM32/MCU1/hello/Debug/Src/syscalls.d",
-    "STM32/MCU1/hello/Debug/Src/main.o",
     "STM32/Foundation course on Embedded C programming using STM32 Microcontroller/Embedded-C/README.md",
     "D1mini(ESP8266)/README.md",
     "C_Programming_Notes/README.md",
@@ -202,8 +204,6 @@
     "c++/(補充)自己寫的/運算式、運算子、if、while.md",
     "c++/【01 Introduction to C Programming】.md",
     "c++/(補充)自己寫的/01資料A型態、變數、常數.md",
-    "STM32/ARM Cortex/README.md",
-    "c sharp/README.md",
     "D1mini(ESP8266)/MP32410_examples/ch05/temp/ball0.jpg",
     "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-service/generator/template/src/assets/logo.png",
     "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_world.png",

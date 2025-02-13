@@ -1,4 +1,3 @@
-123
 ## 1. 集中式版本控制 (Centralized Version Control, CVCS) vs. 分散式版本控制 (Distributed Version Control, DVCS)
 
 ### 1.1. 集中式版本控制 (Centralized Version Control, CVCS)
@@ -155,6 +154,7 @@ issue #1229
 - 查看當下紀錄：git log --oneline
 ![upgit_20250213_1739450312.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739450312.png)
 
-
+## 6. git pull 
+- 直接在遠端修改README
 
 
