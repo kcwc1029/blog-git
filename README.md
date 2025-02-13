@@ -15,8 +15,9 @@
 
 ## 2. git
 
--   將【儲存的資訊】以及【對檔案隨時間的變更】視為檔案並儲存。
-    ![upgit_20250213_1739437259.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739437259.png)
+> [!NOTE] 將【儲存的資訊】以及【對檔案隨時間的變更】視為檔案並儲存。
+
+![upgit_20250213_1739437259.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739437259.png)
 
 ### 2.1. git 的三種狀態：
 
@@ -156,5 +157,30 @@ issue #1229
 
 ## 6. git pull 
 - 直接在遠端修改README
+- 在PC端git pull
 
+## 7. `.gitignore`
+
+## 8. 從 Git 版本庫中移除檔案：git rm
+- 還記得git的用處嗎：將【儲存的資訊】以及【對檔案隨時間的變更】視為檔案並儲存。
+- 他儲存的是檔案邊更，而非檔案本身。因此，刪除檔案對git來說，也是一種【要記錄的過程】
+- 因此，如果要【讓檔案直接移除git紀錄】，就需要git rm
+- 示範：單純右鍵刪除檔案，查看git status
+### 8.1. Lab：移除 `.gitignore` 忽略的檔案
+- 如果某些檔案被 `.gitignore` 忽略了，但你想確保 Git 不再追蹤這些檔案
+```
+git rm -r --cached .
+git add .
+git commit -m "移除已被忽略的檔案"
+git push
+```
+### 8.2. Lab：Git 移除已經被追蹤的隱私檔案（誤提交的機密檔案）
+- 如果你 不小心把隱私檔案（如 API 金鑰、密碼、個人設定檔）提交到 Git，但又不能讓 Git 繼續追蹤它，你需要執行【從 Git 移除，並確保未來不會再提交】的步驟。
+- STEP01：先將檔案加到gitignore
+- STEP02：從 Git 版本庫中移除檔案
+```
+git rm --cached config.json 
+git commit -m "從 Git 版本庫移除敏感檔案" 
+git push origin main
+```
 

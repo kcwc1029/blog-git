@@ -138,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "c++/leetcode題目/linked-list.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "linked-list 的大綱"
+              "title": "README 的大綱"
             }
           }
         ],
@@ -152,8 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,11 +164,13 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "91d2374114e34d8f",
+  "active": "3fa6783af230dcf5",
   "lastOpenFiles": [
+    "未命名.md",
+    "test02.txt",
+    "test01.txt",
     "test.txt",
     "README.md",
-    "未命名.md",
     "drowio_github.drawio",
     "c++/leetcode題目/數學.md",
     "c++/leetcode題目/數組.md",
@@ -190,9 +191,6 @@
     "STM32/MCU1/hello/Debug/hello.list",
     "STM32/MCU1/hello/Debug/hello.elf",
     "STM32/MCU1/hello/Debug/hello.map",
-    "STM32/MCU1/hello/Debug/Src/syscalls.o",
-    "STM32/MCU1/hello/Debug/Src/sysmem.o",
-    "STM32/MCU1/hello/Debug/Src/syscalls.d",
     "STM32/Foundation course on Embedded C programming using STM32 Microcontroller/Embedded-C/README.md",
     "D1mini(ESP8266)/README.md",
     "C_Programming_Notes/README.md",
