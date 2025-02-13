@@ -58,12 +58,13 @@ eg：git help config
 
 ![upgit_20250213_1739438782.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739438782.png)
 
--   新增檔案 text.txt
--   查看狀態：git status
--   將變更加入暫存區 (Staging Area)：git add .
--   查看狀態：git status
--   將暫存區的變更存入 Git 倉庫：git commit -m "附加描述"
--   將 git 倉庫推到 github：git pull
+- 確認遠端倉庫：git remote -v
+- 新增檔案 text.txt
+- 查看狀態：git status
+- 將變更加入暫存區 (Staging Area)：git add .
+- 查看狀態：git status
+- 將暫存區的變更存入 Git 倉庫：git commit -m "附加描述"
+- 將 git 倉庫推到 github：git pull
 
 ## 4. Commit Message 之規範
 - 參考來源：[Git Commit Message 這樣寫會更好，替專案引入規範與範例 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10228738)
@@ -142,4 +143,18 @@ issue #1229
 ## 5. 查看提交歷史
 - 基本語法：git log
 - 比較會用的方式：git log --oneline
+![upgit_20250213_1739450058.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739450058.png)
+- PC端：
+	- HEAD -> main：代表當前位置
+- github端：
+	- origin/main：遠端倉庫 (remote repository)位置
+	- origin/HEAD：是一個特殊的指標，通常指向遠端倉庫的預設分支 (default branch)
+- 所以，如果我這時候在做一次提交
+	- git add.
+	- git commit -m "2025.02.13"
+- 查看當下紀錄：git log --oneline
+![upgit_20250213_1739450312.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739450312.png)
+
+
+
 
