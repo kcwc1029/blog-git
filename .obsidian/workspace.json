@@ -166,6 +166,8 @@
   },
   "active": "3fa6783af230dcf5",
   "lastOpenFiles": [
+    "attachments/Pasted image 20250213213025.png",
+    "attachments",
     "未命名.md",
     "test02.txt",
     "test01.txt",
@@ -190,7 +192,6 @@
     "STM32/MCU1/hello/hello.launch",
     "STM32/MCU1/hello/Debug/hello.list",
     "STM32/MCU1/hello/Debug/hello.elf",
-    "STM32/MCU1/hello/Debug/hello.map",
     "STM32/Foundation course on Embedded C programming using STM32 Microcontroller/Embedded-C/README.md",
     "D1mini(ESP8266)/README.md",
     "C_Programming_Notes/README.md",

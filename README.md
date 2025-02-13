@@ -148,7 +148,11 @@ issue #1229
 	- HEAD -> main：代表當前位置
 - github端：
 	- origin/main：遠端倉庫 (remote repository)位置
-	- origin/HEAD：是一個特殊的指標，通常指向遠端倉庫的預設分支 (default branch)
+	- origin/HEAD：
+		- 預設分支指標，是一個特殊的指標，通常指向遠端倉庫的預設分支 (default branch)
+		- 遠端倉庫 (`origin`) 預設應該使用 `main` 作為主要分支。
+		- 當你 `git clone` 時，Git 會自動讓你進入 `main` 分支。
+
 - 所以，如果我這時候在做一次提交
 	- git add.
 	- git commit -m "2025.02.13"
@@ -183,4 +187,25 @@ git rm --cached config.json
 git commit -m "從 Git 版本庫移除敏感檔案" 
 git push origin main
 ```
+
+- 如果這份檔案已經(push到GitHub/GitLab，你需要使用git filter-branch。
+- 注意：這會改變 Git 歷史，可能會影響其他開發者，因此建議在小型團隊或個人專案中使用。
+
+```
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <要清除紀錄的機密檔案>" --prune-empty --tag-name-filter cat -- --all
+
+git push origin --force --all
+```
+
+## 9. branch
+- Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
+
+![upgit_20250213_1739453196.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739453196.png)
+
+- 示範：在github上新增分支
+- 查看本地所有分支：git branch
+- 查看PC+雲端所有分支：
+	- git pull
+	- git branch -r
+
 
