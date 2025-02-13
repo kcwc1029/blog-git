@@ -197,15 +197,40 @@ git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <要�
 git push origin --force --all
 ```
 
-## 9. branch
+## 9. tag
+- `git tag` 用於 標記 (tag) Git 的特定版本，通常用來標記軟體的發佈版本，例如 `v1.0.0`、`v2.0.1`
+- 標記特定版本（例如 `v1.0.0`）。
+- 快速回到某個穩定版本（可以隨時 `checkout` 回標記）。
+### 9.1. 創建 `tag`
+- 創建【沒有描述的標籤】：git tag v1.0.0 
+- 創建【有描述的標籤】：git tag -a v2.0.0 -m "有描述的標籤 2.0.0"
+
+
+## 10. branch
 - Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
 
 ![upgit_20250213_1739453196.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739453196.png)
 
-- 示範：在github上新增分支
+
+### 10.1. 查看branch
 - 查看本地所有分支：git branch
-- 查看PC+雲端所有分支：
-	- git pull
-	- git branch -r
+- 查看雲端所有分支：git branch -r
+- 查看PC+雲端所有分支：git branch -a
+- 示範：在github上新增分支
+### 10.2. 建立分支
+- 建立分支：git branch <新分支名稱>(eg：git branch feature-login)
+	- 這會創建 `feature-login` 分支，但不會切換過去
+	- 切換到新分支：git checkout <分支名稱>
+- 推送新分支到遠端：git push -u origin <分支名稱>(eg：git push -u  feature-login)
+- 刪除分支：git branch -d <分支名稱>
+### 10.3. 分支合併 (merge&rebase)
 
 
+
+
+
+- 要將分支feature-login合併到main(使用merge)
+```
+git checkout main # 切換到 `main` 分支
+git merge feature-login # 合併 `feature-login`
+```
