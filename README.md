@@ -211,18 +211,37 @@ git push origin --force --all
 - git tag
 ### 9.3. 將tag推到雲端
 - 預設標籤是不會被發送到雲端的，如果要將tag發送到雲端：git push --tags
-## 10. branch
+- 可以將當前的工作區變更「暫存」起來，然後恢復乾淨的工作區，之後再取回這些變更。
+
+
+
+## 10. Git Stash (暫存變更)
+- 當你在某個分支上進行開發，突然需要切換到另一個分支，但不想 commit 未完成的變更時，可以使用 `git stash` 暫存變更。
+### 10.1. 暫存當前變更
+- git stash：未追蹤 (untracked) 或忽略 (ignored) 的檔案不會被 stash
+### 10.2. 查看 Stash 列表
+- git stash list：
+### 10.3. 取回暫存的變更
+- git stash apply：取回最近的 stash 但不刪除 stash
+- git stash apply stash@{2}：取回特定的 stash，例如 stash@{2}
+- git stash pop（取回並刪除 stash）
+### 10.4. 刪除 Stash
+- git stash drop stash@{0}：刪除 `stash@{0}`，但不影響其他 stash。
+- git stash clear：清空所有 stash
+
+
+## 11. branch
 - Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
 
 ![upgit_20250213_1739453196.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739453196.png)
 
 
-### 10.1. 查看branch
+### 11.1. 查看branch
 - 查看本地所有分支：git branch
 - 查看雲端所有分支：git branch -r
 - 查看PC+雲端所有分支：git branch -a
 - 示範：在github上新增分支
-### 10.2. 建立分支
+### 11.2. 建立分支
 - 建立分支：git branch <新分支名稱>(eg：git branch feature-login)
 	- 這會創建 `feature-login` 分支，但不會切換過去
 
@@ -232,7 +251,7 @@ git push origin --force --all
 - git如何知道你目前處在哪一支分支=>HEAD
 ![upgit_20250214_1739506309.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506309.png)
 
-### 10.3. 切換分支
+### 11.3. 切換分支
 - 切換到新分支：git checkout <分支名稱>(eg：git checkout testing)
 - 改變HEAD指標，指向hceckout 的那個分支
 ![upgit_20250214_1739506472.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506472.png)
@@ -246,12 +265,12 @@ git push origin --force --all
 - 這時候，我們再從main(master)去commit
 ![upgit_20250214_1739506584.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506584.png)
 
-### 10.4. 其他事項
+### 11.4. 其他事項
 - 推送新分支到遠端：git push -u origin <分支名稱>(eg：git push -u  feature-login)
 - 刪除分支：git branch -d <分支名稱>
-### 10.5. 分支合併：merge
+### 11.5. 分支合併：merge
 
-#### 10.5.1. Fast-Forward Merge：
+#### 11.5.1. Fast-Forward Merge：
 ![upgit_20250214_1739507213.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507213.png)
 
 - 是 Git **最簡單的合併方式**
@@ -261,7 +280,7 @@ git checkout main # 切換到 main 分支
 git pull # 確保 main 分支是最新的
 git merge --ff-only feature-login # 嘗試 Fast-Forward Merge
 ```
-#### 10.5.2. 3-way merge(一般合併)
+#### 11.5.2. 3-way merge(一般合併)
 ![upgit_20250214_1739507498.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507498.png)
 - 當兩個分支有分叉時，Git 會創建一個新的合併提交，結合兩個分支的更改。
 ```
@@ -272,7 +291,7 @@ git merge feature-login 合併 feature-login
 - 示範：一般merge，處理衝突
 
 
-### 10.6. 分支合併：merge
+### 11.6. 分支合併：merge
 - Git rebase 是 Git 中用於整合分支的另一種方式
 - 與 `git merge` 不同，它通過重新應用提交來保持線性歷史。
 	- Merge 會創建一個合併提交，保留分支結構。
@@ -288,12 +307,12 @@ git rebase main # 執行 rebase
 git add .
 git rebase --continue # 繼續 rebase
 ```
-## 11. 返回之前commit
+## 12. 返回之前commit
 - 只是想回去看看
 - 回前面看看，並加給行註記(跟現階段完全無關)
 -  現在做爛了，要回到某個時間點，然後從那個時間點當作main繼續下去 => git reset
 
-### 11.1. git checkout 和 Detached HEAD
+### 12.1. git checkout 和 Detached HEAD
 - 在【回到過去某一個紀錄點】時，Git 會進入 **Detached HEAD** 狀
 	- **HEAD**（當前工作目錄的指向）不再指向某個分支，而是直接指向某個特定的提交
 	- 你在這個狀態下所做的任何更改都不會影響任何分支，除非你明確地創建一個新分支來保存這些更改。
@@ -314,7 +333,7 @@ git checkout main  # 切換回 main 分支
 
 - git reflog：列出所有 HEAD 的變更記錄，包括未來的提交
 
-### 11.2. 重置當前分支(HEAD)的狀態
+### 12.2. 重置當前分支(HEAD)的狀態
 - 可以幫助你撤銷提交、取消暫存文件，甚至恢復到某個歷史提交的狀態。
 - 會根據選項決定如何處理工作目錄和暫存區。
 	- --soft：只重置 **HEAD** 指針，不影響暫存區和工作目錄。    
@@ -330,7 +349,7 @@ git reset HEAD~2 # 撤銷最近的兩個提交
 ```
 git reset <commit-hash>
 ```
-### 11.3. git revert 
+### 12.3. git revert 
 - `git revert` 是 Git 中用來撤銷某個 commit 的指令，
 - 但與 `git reset` 不同，`git revert` 不會刪除提交歷史，而是 產生一個新的 commit 來撤銷變更。
 ```
@@ -353,5 +372,5 @@ git revert a1b2c3d # 返回某一個commit
 
 
 
-## 12. 最後要修正的東西
+## 13. 最後要修正的東西
 - git checkout 改成git switch
