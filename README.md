@@ -57,52 +57,34 @@
 ## 4. 安裝 git
 
 ## 5. 建立 Repository
+![upgit_20250213_1739438782.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739438782.png)
 
 ### 5.1. Lab：[github 建立 Repository，clone 到 PC 使用](./Lab/github_to_PC.md)
+### 5.2. Lab：[PC_to_github](./Lab/PC_to_github.md)
 
-### 5.2. Lab：[[PC_to_github]]
-
-> [!NOTE] 從 github 新增一個 Repository【git-demo】，clone 到 PC 使用
-
-### 5.3. 安裝好後得初始設定
-
--   設定使用者身分
-
+### 5.3. 安裝好後設定使用者身分
 ```
-git config -- global user.name "John Doe"
-git config -- global user.email johndoe@example.com
+git config --global user.name "Wei-Cheng Chen"
+git config --global user.email N96144250@gs.ncku.edu.tw
 ```
 
--   取得說明
+### 5.4. 對參數取得說明
 
 ```
 git help 需要查詢的指令
 eg：git help config
 ```
-
-### 5.4. 在 github 上面設定私人或公開
-
-### 5.5. Lab：本地新增 test01.txt，並上傳到 github
-
-![upgit_20250213_1739438782.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739438782.png)
-
--   確認遠端倉庫：git remote -v
--   新增檔案 text.txt
--   查看狀態：git status
--   將變更加入暫存區 (Staging Area)：git add .
--   查看狀態：git status
--   將暫存區的變更存入 Git 倉庫：git commit -m "附加描述"
--   將 git 倉庫推到 github：git pull
+### 5.5. Lab：[本地新增 test02.txt，並上傳到 github](./Lab/add_txt_to_github)
 
 ## 6. Commit Message 之規範
 
 -   參考來源：[Git Commit Message 這樣寫會更好，替專案引入規範與範例 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10228738)
--   不能只把 Git 當作程式碼的 FTP，這樣太可惜了，要把 Git 當作歷史查閱的工具才拿發揮 Git 的功能。
--   「好的 Commit Message」如何在一年後的讓維護人員進入狀況，
--   「不良的 Commit Message」如何在一個月內讓維護人員找不出異動脈絡。
--   commit 要全選刪除的語法：ggdG
-
+- 不能只把 Git 當作程式碼的 FTP，這樣太可惜了，要把 Git 當作歷史查閱的工具才拿發揮 Git 的功能。
+- 好的 Commit Message：如何在一年後的讓維護人員進入狀況，
+- 不良的 Commit Message：如何在一個月內讓維護人員找不出異動脈絡。
+- commit 要全選刪除的語法：ggdG
 ```
+# Commit Message語法閨法
 <type> <subject>
 
 <body>
@@ -110,7 +92,7 @@ eg：git help config
 <footer>
 ```
 
--   type
+-   type(沒有硬性規定)
     -   feat (feature)：新增/修改功能
     -   fix：修 bug
     -   docs：文件
@@ -170,14 +152,13 @@ feat: message 信件通知功能
 調整項目：
 2. mail_template.php，新增 message 區塊。
 3. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。 3
-4. . Message_model_api.php，新增 $where 參數，以便取得每日訊息。
+4. Message_model_api.php，新增 $where 參數，以便取得每日訊息。
 5. Message_api.php、Message_group_user_model_api.php，新增 **取得訊息使用者** 邏輯，以便撈取每日訊息。
 
 issue #1229
 ```
 
 ## 7. Git flow
-
 -   參考來源：[Git 上的三種工作流程. 此篇介紹 Git 的三種工作流程，建議對 Git 有簡單了解再閱讀此篇。若要找 git… | by Bowen | 儲思盆 | Pensieve | Medium](https://medium.com/i-think-so-i-live/git%E4%B8%8A%E7%9A%84%E4%B8%89%E7%A8%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B-10f4f915167e)
     ![upgit_20250214_1739516163.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739516163.png)
 -   Master(main)：最終發行版
@@ -187,6 +168,9 @@ issue #1229
 -   Release：當認為 Develop 分支夠成熟了，就可以把 Develop 分支合併到 Release 分支
     -   進行算是上線前的最後測試
 -   Hotfix：當 master 有 Bug 時，會緊急產生 hotfix 的分支修復，修完後再合併回 master
+
+
+
 
 ## 8. 查看提交歷史
 
@@ -213,11 +197,13 @@ issue #1229
 
 -   直接在遠端修改 README
 -   在 PC 端 git pull
-
+### 9.1. Lab：在github上修改README，在PC端pull
+- 在github上修改README：增加文字【這是直接在github上新增的文字】
+- 在PC上git pull
+- 在PC上對README新增文字【這是直接在PC上新增的文字】
 ## 10. `.gitignore`
-
+### 10.1. Lab：建立檔案key.txt，並利用gitignore忽略它
 -   完整檔案名稱：
-
 ```
 .env # 環境設定檔
 .config # 配置檔案
