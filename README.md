@@ -204,8 +204,11 @@ git push origin --force --all
 ### 9.1. 創建 `tag`
 - 創建【沒有描述的標籤】：git tag v1.0.0 
 - 創建【有描述的標籤】：git tag -a v2.0.0 -m "有描述的標籤 2.0.0"
-
-
+- 為前面的commit補標籤：git tag v0.9.0 -m "有描述的標籤 0.9.0"
+### 9.2. 查看tag
+- git tag
+### 9.3. 將tag推到雲端
+- 預設標籤是不會被發送到雲端的，如果要將tag發送到雲端：git push --tags
 ## 10. branch
 - Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
 
@@ -220,17 +223,100 @@ git push origin --force --all
 ### 10.2. 建立分支
 - 建立分支：git branch <新分支名稱>(eg：git branch feature-login)
 	- 這會創建 `feature-login` 分支，但不會切換過去
-	- 切換到新分支：git checkout <分支名稱>
+
+![upgit_20250214_1739506274.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506274.png)
+
+
+- git如何知道你目前處在哪一支分支=>HEAD
+![upgit_20250214_1739506309.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506309.png)
+
+### 10.3. 切換分支
+- 切換到新分支：git checkout <分支名稱>(eg：git checkout testing)
+- 改變HEAD指標，指向hceckout 的那個分支
+![upgit_20250214_1739506472.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506472.png)
+
+- 這時候去add跟commit
+![upgit_20250214_1739506500.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506500.png)
+
+- 如果再切回master
+![upgit_20250214_1739506536.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506536.png)
+
+- 這時候，我們再從main(master)去commit
+![upgit_20250214_1739506584.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506584.png)
+
+### 10.4. 其他事項
 - 推送新分支到遠端：git push -u origin <分支名稱>(eg：git push -u  feature-login)
 - 刪除分支：git branch -d <分支名稱>
-### 10.3. 分支合併 (merge&rebase)
+### 10.5. 分支合併：merge
 
+#### 10.5.1. Fast-Forward Merge：
+![upgit_20250214_1739507213.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507213.png)
 
-
-
-
-- 要將分支feature-login合併到main(使用merge)
+- 是 Git **最簡單的合併方式**
+- 只發生在 **目標分支（main）沒有新的提交** 的情況下
 ```
-git checkout main # 切換到 `main` 分支
-git merge feature-login # 合併 `feature-login`
+git checkout main # 切換到 main 分支
+git pull # 確保 main 分支是最新的
+git merge --ff-only feature-login # 嘗試 Fast-Forward Merge
 ```
+#### 10.5.2. 3-way merge(一般合併)
+![upgit_20250214_1739507498.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507498.png)
+- 當兩個分支有分叉時，Git 會創建一個新的合併提交，結合兩個分支的更改。
+```
+git checkout main # 切換到 main 分支
+git pull # 確保 main 分支是最新的
+git merge feature-login 合併 feature-login
+```
+- 示範：一般merge，處理衝突
+
+
+### 10.6. 分支合併：merge
+- Git rebase 是 Git 中用於整合分支的另一種方式
+- 與 `git merge` 不同，它通過重新應用提交來保持線性歷史。
+	- Merge 會創建一個合併提交，保留分支結構。
+	- Rebase 會重新應用提交，使歷史更整潔。
+- Rebase 會改寫提交歷史，如果已經將分支推送到遠程倉庫，強制推送（`git push --force`）可能會影響其他開發者。
+- 將當前分支(testing) rebase 到目標分支(main)
+```
+git checkout testing # 切換到要 rebase 的分支
+git rebase main # 執行 rebase
+
+##### 如果發生衝突 #####
+# 手動解決衝突
+git add .
+git rebase --continue # 繼續 rebase
+```
+## 11. 返回之前commit
+- 只是想回去看看
+- 回前面看看，並加給行註記(跟現階段完全無關)
+-  現在做爛了，要回到某個時間點，然後從那個時間點當作main繼續下去 => git reset
+
+### 11.1. git checkout 和 Detached HEAD
+- 在【回到過去某一個紀錄點】時，Git 會進入 **Detached HEAD** 狀
+	- **HEAD**（當前工作目錄的指向）不再指向某個分支，而是直接指向某個特定的提交
+	- 你在這個狀態下所做的任何更改都不會影響任何分支，除非你明確地創建一個新分支來保存這些更改。
+```
+git log --oneline # 查看要到哪一個commit
+git switch <commit-hash> # 回到該紀錄 -> Git 會進入 **Detached HEAD** 狀態
+
+##### 如何離開 Detached HEAD 狀態 #####
+# 回到過去只是看看沒幹嘛，要回來最新的
+git checkout main  # 切換回 main 分支
+
+# 如果你在 Detached HEAD 狀態下做了更改，並希望保存這些更改，可以創建一個新分支
+git add .
+git commit -m "Temporary changes in Detached HEAD"
+git checkout -b temp-branch # 創建新分支保存更改
+git checkout main  # 切換回 main 分支
+```
+
+
+
+
+
+
+
+
+
+## 12. 最後要修正的東西
+- git checkout 改成git switch
