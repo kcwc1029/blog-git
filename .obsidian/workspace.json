@@ -20,8 +20,51 @@
               "icon": "lucide-file",
               "title": "README"
             }
+          },
+          {
+            "id": "8218b013261074f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "6776b5037d249a4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "de1429205a45d4c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lab/PC_to_github.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "PC_to_github"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -138,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "Lab/PC_to_github.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大綱"
+              "title": "PC_to_github 的大綱"
             }
           }
         ],
@@ -164,15 +207,18 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3fa6783af230dcf5",
+  "active": "de1429205a45d4c6",
   "lastOpenFiles": [
+    "Lab/PC_to_github.md",
+    "README.md",
+    "Lab",
+    "Lab/github_to_PC.md",
+    "()45456.md",
     "test02.txt",
     "test01.txt",
     "test.txt",
     "attachments/Pasted image 20250213213025.png",
     "attachments",
-    "未命名.md",
-    "README.md",
     "drowio_github.drawio",
     "c++/leetcode題目/數學.md",
     "c++/leetcode題目/數組.md",
@@ -191,7 +237,6 @@
     "STM32/MCU1/test",
     "STM32/MCU1/hello/hello.launch",
     "STM32/MCU1/hello/Debug/hello.list",
-    "STM32/MCU1/hello/Debug/hello.elf",
     "STM32/Foundation course on Embedded C programming using STM32 Microcontroller/Embedded-C/README.md",
     "D1mini(ESP8266)/README.md",
     "C_Programming_Notes/README.md",
@@ -202,7 +247,6 @@
     "c++/【00全部整理】.md",
     "c++/(補充)自己寫的/運算式、運算子、if、while.md",
     "c++/【01 Introduction to C Programming】.md",
-    "c++/(補充)自己寫的/01資料A型態、變數、常數.md",
     "D1mini(ESP8266)/MP32410_examples/ch05/temp/ball0.jpg",
     "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/@vue/cli-service/generator/template/src/assets/logo.png",
     "互動網頁設計/Vue/vue-project-dynamic-components/node_modules/serve-index/public/icons/page_world.png",
