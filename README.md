@@ -1,3 +1,5 @@
+[toc]
+
 ## 1. 集中式版本控制 (Centralized Version Control, CVCS) vs. 分散式版本控制 (Distributed Version Control, DVCS)
 
 ### 1.1. 集中式版本控制 (Centralized Version Control, CVCS)
@@ -309,6 +311,39 @@ git commit -m "Temporary changes in Detached HEAD"
 git checkout -b temp-branch # 創建新分支保存更改
 git checkout main  # 切換回 main 分支
 ```
+
+- git reflog：列出所有 HEAD 的變更記錄，包括未來的提交
+
+### 11.2. 重置當前分支(HEAD)的狀態
+- 可以幫助你撤銷提交、取消暫存文件，甚至恢復到某個歷史提交的狀態。
+- 會根據選項決定如何處理工作目錄和暫存區。
+	- --soft：只重置 **HEAD** 指針，不影響暫存區和工作目錄。    
+	- --mixed（預設模式）：重置 HEAD 指針和暫存區，但不影響工作目錄。
+		- 這個情況就很像「已經執行 `git add .`，但還沒執行 `git commit` 」 的時間點了。
+	- --hard：重置 HEAD指針、暫存區和工作目錄。 => 絕對不要用他
+- 如果你剛剛提交了一個提交，但發現有問題，可以使用 `git reset` 撤銷該提交。
+```
+git reset HEAD~1 # 撤銷最近的一個提交
+git reset HEAD~2 # 撤銷最近的兩個提交
+```
+- 如果你想將當前分支恢復到某個歷史提交的狀態，可以使用 `git reset`
+```
+git reset <commit-hash>
+```
+### 11.3. git revert 
+- `git revert` 是 Git 中用來撤銷某個 commit 的指令，
+- 但與 `git reset` 不同，`git revert` 不會刪除提交歷史，而是 產生一個新的 commit 來撤銷變更。
+```
+git log --oneline
+git revert a1b2c3d # 返回某一個commit
+# Git 會開啟文字編輯器，讓你輸入 commit 訊息
+# 撤銷該 commit，並會建立一個新的 commit
+```
+
+
+
+
+
 
 
 
