@@ -1,4 +1,7 @@
-## 1. 還沒使用 git 前：以資料夾註記版控
+## 1. 推薦閱讀
+- [程式與網頁開發者必備技能！Git 和 GitHub 零基礎快速上手，輕鬆掌握版本控制的要訣！](https://www.youtube.com/watch?v=FKXRiAiQFiY&t=634s)
+
+## 2. 還沒使用 git 前：以資料夾註記版控
 
 -   在初學程式階段，還不會使用 Git 時，如果練習到一個階段，想避免之後的練習改壞這包程式，十之八九會這麼操作
     -   先把放專案程式的資料夾，整包複製一份。
@@ -16,30 +19,30 @@
     -   容易誤刪版本
     -   不易協作
 
-## 2. 集中式版本控制 (Centralized Version Control, CVCS) vs. 分散式版本控制 (Distributed Version Control, DVCS)
+## 3. 集中式版本控制 (Centralized Version Control, CVCS) vs. 分散式版本控制 (Distributed Version Control, DVCS)
 
-### 2.1. 集中式版本控制 (Centralized Version Control, CVCS)
+### 3.1. 集中式版本控制 (Centralized Version Control, CVCS)
 
 -   集中式版本控制系統 (CVCS) 使用單一的中央伺服器 來儲存所有版本的檔案。
 -   開發者的電腦上不會儲存完整的專案歷史，而是從中央伺服器下載最新版本，進行修改後再提交回伺服器。
 
 ![upgit_20250213_1739436840.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739436840.png)
 
-### 2.2. 分散式版本控制 (Distributed Version Control, DVCS) => git
+### 3.2. 分散式版本控制 (Distributed Version Control, DVCS) => git
 
 -   分散式版本控制系統 (DVCS) 不依賴中央伺服器，每個開發者的電腦上都有完整的版本庫 (Repository)。
 -   可以在本地進行提交 (commit)、回溯 (checkout) 等操作，並在需要時與遠端倉庫同步 (push/pull)。
 
 ![upgit_20250213_1739437120.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739437120.png)
 
-## 3. git
+## 4. git
 
 ![upgit_20250214_1739514804.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739514804.png)
 
 -   將【儲存的資訊】以及【對檔案隨時間的變更】視為檔案並儲存。
     ![upgit_20250213_1739437259.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739437259.png)
 
-### 3.1. git 的三種狀態：
+### 4.1. git 的三種狀態：
 
 -   已修改 (Modified)
     -   檔案已經被更改，但還沒有加入版本控制系統中。
@@ -50,33 +53,33 @@
 -   已提交 (Committed)
     -   變更已經被永久存入 Git 倉庫 (Repository) 中，並保存在本地端的 Git 目錄。
 
-### 3.2. 可以下載的套件
+### 4.2. 可以下載的套件
 
 ![upgit_20250214_1739515016.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739515016.png)
 
-## 4. 安裝 git
+## 5. 安裝 git
 
-## 5. 建立 Repository
+## 6. 建立 Repository
 ![upgit_20250213_1739438782.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739438782.png)
 
-### 5.1. Lab：[github 建立 Repository，clone 到 PC 使用](./Lab/github_to_PC.md)
-### 5.2. Lab：[PC_to_github](./Lab/PC_to_github.md)
+### 6.1. Lab：[github 建立 Repository，clone 到 PC 使用](./Lab/github_to_PC.md)
+### 6.2. Lab：[PC_to_github](./Lab/PC_to_github.md)
 
-### 5.3. 安裝好後設定使用者身分
+### 6.3. 安裝好後設定使用者身分
 ```
 git config --global user.name "Wei-Cheng Chen"
 git config --global user.email N96144250@gs.ncku.edu.tw
 ```
 
-### 5.4. 對參數取得說明
+### 6.4. 對參數取得說明
 
 ```
 git help 需要查詢的指令
 eg：git help config
 ```
-### 5.5. Lab：[本地新增 test02.txt，並上傳到 github](./Lab/add_txt_to_github)
+### 6.5. Lab：[本地新增 test02.txt，並上傳到 github](./Lab/add_txt_to_github)
 
-## 6. Commit Message 之規範
+## 7. Commit Message 之規範
 
 -   參考來源：[Git Commit Message 這樣寫會更好，替專案引入規範與範例 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10228738)
 - 不能只把 Git 當作程式碼的 FTP，這樣太可惜了，要把 Git 當作歷史查閱的工具才拿發揮 Git 的功能。
@@ -103,7 +106,7 @@ eg：git help config
 -   body：對本次 Commit 的詳細描述。可以分成多行，每一行不要超過 72 個字元。
 -   footer：填寫任務編號（如果有的話）
 
-### 6.1. 範例 01：fix
+### 7.1. 範例 01：fix
 
 ```
 fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯
@@ -123,7 +126,7 @@ fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯
 issue #1335
 ```
 
-### 6.2. 範例 02：fix
+### 7.2. 範例 02：fix
 
 ```
 fix: 意見反應，信件看不到圖片問題
@@ -140,7 +143,7 @@ fix: 意見反應，信件看不到圖片問題
 issue #1229
 ```
 
-### 6.3. 範例 03：feat
+### 7.3. 範例 03：feat
 
 ```
 feat: message 信件通知功能
@@ -158,21 +161,9 @@ feat: message 信件通知功能
 issue #1229
 ```
 
-## 7. Git flow
--   參考來源：[Git 上的三種工作流程. 此篇介紹 Git 的三種工作流程，建議對 Git 有簡單了解再閱讀此篇。若要找 git… | by Bowen | 儲思盆 | Pensieve | Medium](https://medium.com/i-think-so-i-live/git%E4%B8%8A%E7%9A%84%E4%B8%89%E7%A8%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B-10f4f915167e)
-    ![upgit_20250214_1739516163.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739516163.png)
--   Master(main)：最終發行版
--   Develop：是所有開發的基礎分支
-    -   當要新增功能時，會新增 feature 分支，開發完後再合併回 Develop。
--   Feature：要開發新功能
--   Release：當認為 Develop 分支夠成熟了，就可以把 Develop 分支合併到 Release 分支
-    -   進行算是上線前的最後測試
--   Hotfix：當 master 有 Bug 時，會緊急產生 hotfix 的分支修復，修完後再合併回 master
 
 
-
-
-## 8. 查看提交歷史
+## 8. 查看提交歷史：git log
 
 -   基本語法：git log
 -   比較會用的方式：git log --oneline
@@ -180,7 +171,6 @@ issue #1229
 -   PC 端：
     -   HEAD -> main：代表當前位置
 -   github 端：
-
     -   origin/main：遠端倉庫 (remote repository)位置
     -   origin/HEAD：
         -   預設分支指標，是一個特殊的指標，通常指向遠端倉庫的預設分支 (default branch)
@@ -192,7 +182,7 @@ issue #1229
     -   git commit -m "2025.02.13"
 -   查看當下紀錄：git log --oneline
     ![upgit_20250213_1739450312.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739450312.png)
-
+-   git reflog：列出所有 HEAD 的變更記錄，包括未來的提交
 ## 9. git pull
 
 -   直接在遠端修改 README
@@ -247,27 +237,15 @@ dist/           # 發布版程式碼的目錄
 -   因此，如果要【讓檔案直接移除 git 紀錄】，就需要 git rm
 -   示範：單純右鍵刪除檔案，查看 git status
 
-### 11.1. Lab：移除 `.gitignore` 忽略的檔案
-
--   如果某些檔案被 `.gitignore` 忽略了，但你想確保 Git 不再追蹤這些檔案
+### 11.1. Lab：將檔案key.txt commit ，在利用gitignore跟rm清除她
+- 嘗試將gitignore的文字註解調，讓私人檔案做紀錄
+- 在利用gitignore跟rm清除她削掉PC紀錄
 
 ```
 git rm -r --cached .
 git add .
 git commit -m "移除已被忽略的檔案"
 git push
-```
-
-### 11.2. Lab：Git 移除已經被追蹤的隱私檔案（誤提交的機密檔案）
-
--   如果你 不小心把隱私檔案（如 API 金鑰、密碼、個人設定檔）提交到 Git，但又不能讓 Git 繼續追蹤它，你需要執行【從 Git 移除，並確保未來不會再提交】的步驟。
--   STEP01：先將檔案加到 gitignore
--   STEP02：從 Git 版本庫中移除檔案
-
-```
-git rm --cached config.json
-git commit -m "從 Git 版本庫移除敏感檔案"
-git push origin main
 ```
 
 -   如果這份檔案已經(push 到 GitHub/GitLab，你需要使用 git filter-branch。
@@ -279,11 +257,20 @@ git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <要�
 git push origin --force --all
 ```
 
+
+> 到這邊休息一下
+
+
+
 ## 12. tag
 
 -   `git tag` 用於 標記 (tag) Git 的特定版本，通常用來標記軟體的發佈版本，例如 `v1.0.0`、`v2.0.1`
 -   標記特定版本（例如 `v1.0.0`）。
 -   快速回到某個穩定版本（可以隨時 `checkout` 回標記）。
+
+![upgit_20250214_1739530569.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739530569.png)
+
+
 
 ### 12.1. 創建 `tag`
 
@@ -292,159 +279,60 @@ git push origin --force --all
 -   為前面的 commit 補標籤：git tag v0.9.0 -m "有描述的標籤 0.9.0"
 
 ### 12.2. 查看 tag
-
 -   git tag
-
 ### 12.3. 將 tag 推到雲端
-
 -   預設標籤是不會被發送到雲端的，如果要將 tag 發送到雲端：git push --tags
 -   可以將當前的工作區變更「暫存」起來，然後恢復乾淨的工作區，之後再取回這些變更。
 
-## 13. Git Stash (暫存變更)
 
--   當你在某個分支上進行開發，突然需要切換到另一個分支，但不想 commit 未完成的變更時，可以使用 `git stash` 暫存變更。
 
-### 13.1. 暫存當前變更
 
--   git stash：未追蹤 (untracked) 或忽略 (ignored) 的檔案不會被 stash
 
-### 13.2. 查看 Stash 列表
 
--   git stash list：
 
-### 13.3. 取回暫存的變更
 
--   git stash apply：取回最近的 stash 但不刪除 stash
--   git stash apply stash@{2}：取回特定的 stash，例如 stash@{2}
--   git stash pop（取回並刪除 stash）
 
-### 13.4. 刪除 Stash
 
--   git stash drop stash@{0}：刪除 `stash@{0}`，但不影響其他 stash。
--   git stash clear：清空所有 stash
+## 13. 版本切換
+- 返回之前 commit的時機
+	-   只是想回去看看
+	-   回前面看看，並加給行註記(跟現階段完全無關)
+	-   現在做爛了，要回到某個時間點，然後從那個時間點當作 main 繼續下去 => git reset
 
-## 14. branch
+### 13.1. 將檔案從站存區移開
+- 將檔案從站存區移開：git reset
 
--   Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
-
-![upgit_20250213_1739453196.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739453196.png)
-
-### 14.1. 查看 branch
-
--   查看本地所有分支：git branch
--   查看雲端所有分支：git branch -r
--   查看 PC+雲端所有分支：git branch -a
--   示範：在 github 上新增分支
-
-### 14.2. 建立分支
-
--   建立分支：git branch <新分支名稱>(eg：git branch feature-login)
-    -   這會創建 `feature-login` 分支，但不會切換過去
-
-![upgit_20250214_1739506274.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506274.png)
-
--   git 如何知道你目前處在哪一支分支=>HEAD
-    ![upgit_20250214_1739506309.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506309.png)
-
-### 14.3. 切換分支
-
--   切換到新分支：git checkout <分支名稱>(eg：git checkout testing)
--   改變 HEAD 指標，指向 hceckout 的那個分支
-    ![upgit_20250214_1739506472.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506472.png)
-
--   這時候去 add 跟 commit
-    ![upgit_20250214_1739506500.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506500.png)
-
--   如果再切回 master
-    ![upgit_20250214_1739506536.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506536.png)
-
--   這時候，我們再從 main(master)去 commit
-    ![upgit_20250214_1739506584.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506584.png)
-
-### 14.4. 其他事項
-
--   推送新分支到遠端：git push -u origin <分支名稱>(eg：git push -u feature-login)
--   刪除分支：git branch -d <分支名稱>
-
-### 14.5. 分支合併：merge
-
-#### 14.5.1. Fast-Forward Merge：
-
-![upgit_20250214_1739507213.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507213.png)
-
--   是 Git **最簡單的合併方式**
--   只發生在 **目標分支（main）沒有新的提交** 的情況下
-
-```
-git checkout main # 切換到 main 分支
-git pull # 確保 main 分支是最新的
-git merge --ff-only feature-login # 嘗試 Fast-Forward Merge
-```
-
-#### 14.5.2. 3-way merge(一般合併)
-
-![upgit_20250214_1739507498.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507498.png)
-
--   當兩個分支有分叉時，Git 會創建一個新的合併提交，結合兩個分支的更改。
-
-```
-git checkout main # 切換到 main 分支
-git pull # 確保 main 分支是最新的
-git merge feature-login 合併 feature-login
-```
-
--   示範：一般 merge，處理衝突
-
-### 14.6. 分支合併：merge
-
--   Git rebase 是 Git 中用於整合分支的另一種方式
--   與  `git merge`  不同，它通過重新應用提交來保持線性歷史。
-    -   Merge 會創建一個合併提交，保留分支結構。
-    -   Rebase 會重新應用提交，使歷史更整潔。
--   Rebase 會改寫提交歷史，如果已經將分支推送到遠程倉庫，強制推送（`git push --force`）可能會影響其他開發者。
--   將當前分支(testing) rebase 到目標分支(main)
-
-```
-git checkout testing # 切換到要 rebase 的分支
-git rebase main # 執行 rebase
-
-##### 如果發生衝突 #####
-# 手動解決衝突
-git add .
-git rebase --continue # 繼續 rebase
-```
-
-## 15. 返回之前 commit
-
--   只是想回去看看
--   回前面看看，並加給行註記(跟現階段完全無關)
--   現在做爛了，要回到某個時間點，然後從那個時間點當作 main 繼續下去 => git reset
-
-### 15.1. git checkout 和 Detached HEAD
-
+### 13.2. git checkout 和 Detached HEAD
 -   在【回到過去某一個紀錄點】時，Git 會進入  **Detached HEAD**  狀
     -   **HEAD**（當前工作目錄的指向）不再指向某個分支，而是直接指向某個特定的提交
     -   你在這個狀態下所做的任何更改都不會影響任何分支，除非你明確地創建一個新分支來保存這些更改。
 
+### 13.3. Lab：只是想回去看看
+- 查看前面的：這時候會呈現detached HEAD狀態
+	- git checkout hash值
+	- git checkout HEAD~1
+- 返回：main分支在最前面 => 
+	- git checkout main
+	- git switch main
+
+
+### 13.4. Lab：在 Detached HEAD 狀態下做了更改，並希望保存這些更改
 ```
 git log --oneline # 查看要到哪一個commit
-git switch <commit-hash> # 回到該紀錄 -> Git 會進入 **Detached HEAD** 狀態
+git checkout HEAD~1或hash值
 
-##### 如何離開 Detached HEAD 狀態 #####
-# 回到過去只是看看沒幹嘛，要回來最新的
-git checkout main  # 切換回 main 分支
+##### 建立一個新分支來保存變更 #####
+git checkout temp-branch
+git switch temp-branch
 
-# 如果你在 Detached HEAD 狀態下做了更改，並希望保存這些更改，可以創建一個新分支
+##### 將變更加入暫存區 ##### 
 git add .
 git commit -m "Temporary changes in Detached HEAD"
-git checkout -b temp-branch # 創建新分支保存更改
-git checkout main  # 切換回 main 分支
+
+##### 切換回 main 或其他分支 #####
+git switch main # 切回 main 分支
 ```
-
--   git reflog：列出所有 HEAD 的變更記錄，包括未來的提交
-
-### 15.2. 重置當前分支(HEAD)的狀態
-
+### 13.5. 重置當前分支(HEAD)的狀態：git reset
 -   可以幫助你撤銷提交、取消暫存文件，甚至恢復到某個歷史提交的狀態。
 -   會根據選項決定如何處理工作目錄和暫存區。
     -   --soft：只重置  **HEAD**  指針，不影響暫存區和工作目錄。
@@ -464,7 +352,7 @@ git reset HEAD~2 # 撤銷最近的兩個提交
 git reset <commit-hash>
 ```
 
-### 15.3. git revert
+### 13.6. git revert
 
 -   `git revert` 是 Git 中用來撤銷某個 commit 的指令，
 -   但與 `git reset` 不同，`git revert` 不會刪除提交歷史，而是 產生一個新的 commit 來撤銷變更。
@@ -476,6 +364,133 @@ git revert a1b2c3d # 返回某一個commit
 # 撤銷該 commit，並會建立一個新的 commit
 ```
 
-## 16. 最後要修正的東西
 
--   git checkout 改成 git switch
+## 14. Git flow
+-   參考來源：[Git 上的三種工作流程. 此篇介紹 Git 的三種工作流程，建議對 Git 有簡單了解再閱讀此篇。若要找 git… | by Bowen | 儲思盆 | Pensieve | Medium](https://medium.com/i-think-so-i-live/git%E4%B8%8A%E7%9A%84%E4%B8%89%E7%A8%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B-10f4f915167e)
+    ![upgit_20250214_1739516163.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739516163.png)
+-   Master(main)：最終發行版
+-   Develop：是所有開發的基礎分支
+    -   當要新增功能時，會新增 feature 分支，開發完後再合併回 Develop。
+-   Feature：要開發新功能
+-   Release：當認為 Develop 分支夠成熟了，就可以把 Develop 分支合併到 Release 分支
+    -   進行算是上線前的最後測試
+-   Hotfix：當 master 有 Bug 時，會緊急產生 hotfix 的分支修復，修完後再合併回 master
+
+
+
+
+## 15. branch
+
+-   Git 的 分支 (branch) 是用來管理不同版本的變更，讓你可以同時開發多個功能，而不影響主線程 (`main` 或 `master`)。
+
+![upgit_20250213_1739453196.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250213_1739453196.png)
+
+### 15.1. 查看 branch
+
+-   查看本地所有分支：git branch
+-   查看雲端所有分支：git branch -r
+-   查看 PC+雲端所有分支：git branch -a
+-   示範：在 github 上新增分支
+
+### 15.2. 建立分支
+
+-   建立分支：git branch <新分支名稱>(eg：git branch feature-login)
+    -   這會創建 `feature-login` 分支，但不會切換過去
+
+![upgit_20250214_1739506274.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506274.png)
+
+-   git 如何知道你目前處在哪一支分支=>HEAD
+    ![upgit_20250214_1739506309.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506309.png)
+
+### 15.3. 切換分支
+
+-   切換到新分支：git checkout <分支名稱>(eg：git checkout testing)
+-   改變 HEAD 指標，指向 hceckout 的那個分支
+    ![upgit_20250214_1739506472.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506472.png)
+
+-   這時候去 add 跟 commit
+    ![upgit_20250214_1739506500.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506500.png)
+
+-   如果再切回 master
+    ![upgit_20250214_1739506536.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506536.png)
+
+-   這時候，我們再從 main(master)去 commit
+    ![upgit_20250214_1739506584.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739506584.png)
+
+### 15.4. 其他事項
+
+-   推送新分支到遠端：git push -u origin <分支名稱>(eg：git push -u feature-login)
+-   刪除分支：git branch -d <分支名稱>
+
+### 15.5. 分支合併：merge
+
+#### 15.5.1. Fast-Forward Merge：
+
+![upgit_20250214_1739507213.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507213.png)
+
+-   是 Git **最簡單的合併方式**
+-   只發生在 **目標分支（main）沒有新的提交** 的情況下
+
+```
+git checkout main # 切換到 main 分支
+git pull # 確保 main 分支是最新的
+git merge --ff-only feature-login # 嘗試 Fast-Forward Merge
+```
+
+#### 15.5.2. 3-way merge(一般合併)
+
+![upgit_20250214_1739507498.png](https://raw.githubusercontent.com/kcwc1029/obsidian-upgit-image/main/2025/02/upgit_20250214_1739507498.png)
+
+-   當兩個分支有分叉時，Git 會創建一個新的合併提交，結合兩個分支的更改。
+
+```
+git checkout main # 切換到 main 分支
+git pull # 確保 main 分支是最新的
+git merge feature-login 合併 feature-login
+```
+
+-   示範：一般 merge，處理衝突
+
+### 15.6. 分支合併：merge
+
+-   Git rebase 是 Git 中用於整合分支的另一種方式
+-   與  `git merge`  不同，它通過重新應用提交來保持線性歷史。
+    -   Merge 會創建一個合併提交，保留分支結構。
+    -   Rebase 會重新應用提交，使歷史更整潔。
+-   Rebase 會改寫提交歷史，如果已經將分支推送到遠程倉庫，強制推送（`git push --force`）可能會影響其他開發者。
+-   將當前分支(testing) rebase 到目標分支(main)
+
+```
+git checkout testing # 切換到要 rebase 的分支
+git rebase main # 執行 rebase
+
+##### 如果發生衝突 #####
+# 手動解決衝突
+git add .
+git rebase --continue # 繼續 rebase
+```
+## 16. Git Stash (暫存變更)
+
+-   當你在某個分支上進行開發，突然需要切換到另一個分支，但不想 commit 未完成的變更時，可以使用 `git stash` 暫存變更。
+
+### 16.1. 暫存當前變更
+
+-   git stash：未追蹤 (untracked) 或忽略 (ignored) 的檔案不會被 stash
+
+### 16.2. 查看 Stash 列表
+
+-   git stash list：
+
+### 16.3. 取回暫存的變更
+
+-   git stash apply：取回最近的 stash 但不刪除 stash
+-   git stash apply stash@{2}：取回特定的 stash，例如 stash@{2}
+-   git stash pop（取回並刪除 stash）
+
+### 16.4. 刪除 Stash
+
+-   git stash drop stash@{0}：刪除 `stash@{0}`，但不影響其他 stash。
+-   git stash clear：清空所有 stash
+
+
+
