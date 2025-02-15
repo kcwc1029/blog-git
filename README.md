@@ -13,7 +13,15 @@
     -   PC 與雲端之間連結操作
     -   .gitignore 的作用與寫法
     -   Git Tag（版本標記）
-
+- [成大工科 工程科學暨創新概論 git教學02](https://www.youtube.com/watch?v=2nl6M9ar494)
+    - 版本切換
+    - Detached HEAD
+    - Git Flow（分支開發流程）
+    - 分支管理（branch）
+    - git reset（重置提交歷史）
+    - git revert（保留歷史但撤銷變更）
+    - 分支合併（merge & rebase）
+    - Git Stash（暫存變更）
 ## 2. 推薦閱讀
 
 -   [程式與網頁開發者必備技能！Git 和 GitHub 零基礎快速上手，輕鬆掌握版本控制的要訣！](https://www.youtube.com/watch?v=FKXRiAiQFiY&t=634s)
@@ -513,6 +521,9 @@ git rebase --continue # 繼續 rebase
 
 -   git stash drop stash@{0}：刪除 `stash@{0}`，但不影響其他 stash。
 -   git stash clear：清空所有 stash
+
+
+
 
 <p align="center">
   Copyright © 2025 WEI-CHENG CHEN
